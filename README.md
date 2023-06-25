@@ -15,7 +15,7 @@
 
 <h3>Sem Servidor Pada Deixar O Bot Em 24H/48H Online, Clica No Botão Abaixo:
    <br>
-   <a href="https://youtu.be/-Rqmm8xS90o">1 - Site Da Replit (Video Ensinando)</a>
+   <a href="https://youtu.be/-Rqmm8xS90o">0 - Site Da Replit (Video Ensinando)</a>
   </br>
 </h3>
 </div>
