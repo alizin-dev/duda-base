@@ -45,11 +45,7 @@ const speed = require('performance-now')
 
 const { performance } = require('perf_hooks')
 
-const { Primbon } = require('scrape-primbon')
-
 var gerarnick = require('./BANCO DE DADOS/gerarnick.js')
-
-const primbon = new Primbon()
 
 const { 
 smsg, 
