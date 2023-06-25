@@ -13,7 +13,7 @@
 <img title="Versão" src="https://img.shields.io/badge/Versão-1.0.0-orange.svg?style=for-the-badge&logo=github"></a>
 </p>
 
-<h3>Sem Servidor Pada Deixar O Bot Em 24H/48H Online, Clica No Botão Abaixo:
+<h3>Sem Servidor Para Deixar O Bot Em 24H/48H Online, Clica No Botão Abaixo:
    <br>
    <a href="https://youtu.be/-Rqmm8xS90o">0 - Site Da Replit (Video Ensinando)</a>
   </br>
