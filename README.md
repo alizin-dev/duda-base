@@ -51,7 +51,7 @@ sh alizin.sh
 ```
 cd /sdcard/duda-base && sh alizin.sh
 ```
- ### <h2 align="center">⚙️ UTILIZE O CMD: sh atualizar.sh</h2>
+ ### <h2 align="center">❗ UTILIZE O CMD: sh atualizar.sh</h2>
 
 ```
 USE O CMD " sh atualizar.sh "
