@@ -751,6 +751,7 @@ enviar(`Link do grupo : https://chat.whatsapp.com/${link}`)
 break
 
 case 'resetarlink':// BY ALIZINDEV 
+case 'resetalink':// BY ALIZINDEV 
 if (!m.isGroup) return enviar('so para grupo')
 if (!isgroupAdmins) return enviar('So ADM Po')
 if (!isBotgroupAdmins) return enviar('preciso ser ADM')
@@ -805,9 +806,11 @@ enviar(`
 break
 
 case 'mudardk':// BY ALIZINDEV 
+case 'mudadk':// BY ALIZINDEV 
 if (!m.isGroup) return enviar('so para grupo')
 if (!isgroupAdmins) return enviar('So ADM Po')
 if (!isBotgroupAdmins) return enviar('preciso ser ADM')
+if (!q) return reply(`esreva uma msg, exemple; ${prefixo}mudardk alizin domina`)
 try {
 await duda.groupUpdateDescription(from, `${q}`)
 enviar('Descrição alterada com sucesso ✓')
@@ -817,10 +820,12 @@ enviar('erro...')
 }
 break
 
-case 'mudarnm':// BY ALIZINDEV 
+case 'mudarnm':// BY ALIZINDEV
+case 'mudanm': // BY ALIZINDEV
 if (!m.isGroup) return enviar('so para grupo')
 if (!isgroupAdmins) return enviar('So ADM Po')
 if (!isBotgroupAdmins) return enviar('preciso ser ADM')
+if (!q) return reply(`esreva uma msg, exemple; ${prefixo}mudarnm Grupo Do ${pushname}`)
 try {
 await duda.groupUpdateSubject(from, `${q}`)
 enviar('Nome alterado com sucesso ✓')
@@ -889,6 +894,8 @@ break
 case 'ban': // BY ALIZINDEV 
 case 'kick':// BY ALIZINDEV 
 case 'b':// BY ALIZINDEV 
+case 'bani':// BY ALIZINDEV 
+case 'banir':// BY ALIZINDEV 
 {
 if (!m.isGroup) return reply('so em grupo')
 if (!isgroupAdmins) return reply('so adm')
