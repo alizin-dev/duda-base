@@ -297,9 +297,9 @@ const isBotAdmins = m.isGroup ? groupAdmins.includes(NumeroDoBot) : false
 
 const BotPrecisaSerAdm = m.isGroup ? groupAdmins.includes(NumeroDoBot) : false
 
-const isBotgroupAdmins = m.isGroup ? groupAdmins.includes(NumeroDoBot) : false
+const isBotGroupAdmins = m.isGroup ? groupAdmins.includes(NumeroDoBot) : false
 
-const isgroupAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
+const isGroupAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
 
 const VcPrecisaSerAdm = m.isGroup ? groupAdmins.includes(m.sender) : false
  
@@ -330,7 +330,7 @@ const isAntilinkHard = isGroup ? antilinkhard.includes(from) : false
 const isAntilinkgp = isGroup ? antilinkgp.includes(from) : false
 
 async function AntilinkHardF() {
-if(isUrl(budy2) && isAntilinkHard && isgroupAdmins && isBotgroupAdmins && !info.key.fromMe) {
+if(isUrl(budy2) && isAntilinkHard && isGroupAdmins && isBotGroupAdmins && !info.key.fromMe) {
 if(command == "tiktok" || command == 'tiktok2' || command == "facebook" || command == "instagram" || command == "tiktok" || command == "twitter" || command == "ytmp3" || command == "ytmp4" || command == "play") return
 var linkgpp = await duda.groupInviteCode(from)
 if(budy2.match(`${linkgpp}`)) return reply('link do nosso grupo, não irei remover.. ')
@@ -341,7 +341,7 @@ if(budy2.includes(`${linkgpp}`)) return
 reply('*link detectado, porém usuário é admin*')
 }
 
-if(isUrl(budy2) && isAntilinkHard && !isgroupAdmins && isBotgroupAdmins && !info.key.fromMe) {
+if(isUrl(budy2) && isAntilinkHard && !isGroupAdmins && isBotGroupAdmins && !info.key.fromMe) {
 if(command == "tiktok" || command == "facebook" || command == 'tiktok2' || command == "instagram" || command == "tiktok" || command == "twitter" || command == "ytmp3" || command == "ytmp4" || command == "play") return
 var linkgpp = await duda.groupInviteCode(from)
 if(budy2.match(`${linkgpp}`)) return reply('link do nosso grupo, não irei remover.. ')
@@ -359,7 +359,7 @@ duda.groupParticipantsUpdate(from, [sender], 'remove')
 } 
 AntilinkHardF()
 
-if(isUrl(body) && isAntilinkgp && isGroup && isBotgroupAdmins) {
+if(isUrl(body) && isAntilinkgp && isGroup && isBotGroupAdmins) {
 if(!isAntilinkgp) return
 if(!isUrl(body)) return 
 if(budy2.includes("chat.whatsapp.com/")){
@@ -367,7 +367,7 @@ if(!budy2.includes("chat.whatsapp.com/")) return
 if(isBot) return 
 var linkgpp = await duda.groupInviteCode(from)
 if(budy.match(`${linkgpp}`)) return reply('link do nosso grupo, não irei remover.. ')
-if(isgroupAdmins) return reply("Você é adm, não removerei você..")
+if(isGroupAdmins) return reply("Você é adm, não removerei você..")
 if(!JSON.stringify(groupMembers).includes(sender)) return
 duda.sendMessage(from, { delete: {
 remoteJid: from,
@@ -379,10 +379,10 @@ duda.groupParticipantsUpdate(from, [sender], 'remove')
 }
 
 //BAN CHATS/GRUPOS
-if (isBanchat && !isgroupAdmins && !Dono){
-if (!isgroupAdmins && !Dono) return
+if (isBanchat && !isGroupAdmins && !Dono){
+if (!isGroupAdmins && !Dono) return
 if (budy2.startsWith('unbangp')){
-if (isCmd && !isBanchat && !isgroupAdmins) return reply(`Este grupo esta banido, ou seja não estou ouvindo ninguém`)
+if (isCmd && !isBanchat && !isGroupAdmins) return reply(`Este grupo esta banido, ou seja não estou ouvindo ninguém`)
 let lfd = bancht.indexOf(from)
 bancht.splice(lfd, 1)
 fs.writeFileSync('./BANCO DE DADOS/banchat.json', JSON.stringify(bancht))
@@ -562,8 +562,8 @@ case 'bemvindo':// BY ALIZINDEV
 case 'welcome':// BY ALIZINDEV 
 case 'varbemvindo':// BY ALIZINDEV 
 if (!m.isGroup) return reply('Só em Grupo')
-if (!isgroupAdmins) return reply('Você Não é Adm')
-if (!isBotgroupAdmins) return reply('preciso ser adm')
+if (!isGroupAdmins) return reply('Você Não é Adm')
+if (!isBotGroupAdmins) return reply('preciso ser adm')
 if (args.length < 1) return reply('1 pra ligar / 0 pra desligar')
 if (Number(args[0]) === 1) {
 if (isWelkom) return reply('Ja esta ativo')
@@ -616,7 +616,7 @@ break
 
 case 'autoban':// BY ALIZINDEV 
 if (!m.isGroup) return reply('Você Não é Adm')
-if (!isgroupAdmins && !Dono) return reply('Precisa ser Dono')
+if (!isGroupAdmins && !Dono) return reply('Precisa ser Dono')
 if (args.length < 1) return reply('Hmmmm')
 if (Number(args[0]) === 1) {
 if(isAdeusCara) return reply("Já está ativado.")
@@ -779,7 +779,7 @@ break
 case 'gplink':// BY ALIZINDEV 
 if (!m.isGroup) return enviar('so para grupo')
 if (!isgroupAdmins) return enviar('So ADM Po')
-if (!isBotgroupAdmins) return enviar('preciso ser ADM')
+if (!isBotGroupAdmins) return enviar('preciso ser ADM')
 const link = await duda.groupInviteCode(from)
 enviar(`Link do grupo : https://chat.whatsapp.com/${link}`)
 break
@@ -787,7 +787,7 @@ break
 case 'resetarlink':// BY ALIZINDEV 
 if (!m.isGroup) return enviar('so para grupo')
 if (!isgroupAdmins) return enviar('So ADM Po')
-if (!isBotgroupAdmins) return enviar('preciso ser ADM')
+if (!isBotGroupAdmins) return enviar('preciso ser ADM')
 try {
 await duda.groupRevokeInvite(from)
 enviar('Link de convite resetado com sucesso ✓')
@@ -801,7 +801,7 @@ case 'gp':// BY ALIZINDEV
 case 'grupo':// BY ALIZINDEV 
 if (!m.isGroup) return enviar('so para grupo')
 if (!isgroupAdmins) return enviar('So ADM Po')
-if (!isBotgroupAdmins) return enviar('preciso ser ADM')
+if (!isBotGroupAdmins) return enviar('preciso ser ADM')
 try {
 if (!q) return reply(`EXEMPLE: ${prefixo}Abrir ou ${prefixo}Fechar`)
 if (q == 'abrir') {
@@ -828,7 +828,7 @@ break
 
 case 'infogp':// BY ALIZINDEV 
 if (!m.isGroup) return enviar('so para grupo')
-if (!isBotgroupAdmins) return enviar('preciso ser ADM')
+if (!isBotGroupAdmins) return enviar('preciso ser ADM')
 enviar(`
 👻 Nome : ${groupName}
 ☔ Descrição : ${groupDesc}
@@ -841,7 +841,7 @@ break
 case 'mudardk':// BY ALIZINDEV 
 if (!m.isGroup) return enviar('so para grupo')
 if (!isgroupAdmins) return enviar('So ADM Po')
-if (!isBotgroupAdmins) return enviar('preciso ser ADM')
+if (!isBotGroupAdmins) return enviar('preciso ser ADM')
 try {
 await duda.groupUpdateDescription(from, `${q}`)
 enviar('Descrição alterada com sucesso ✓')
@@ -854,7 +854,7 @@ break
 case 'mudarnm':// BY ALIZINDEV 
 if (!m.isGroup) return enviar('so para grupo')
 if (!isgroupAdmins) return enviar('So ADM Po')
-if (!isBotgroupAdmins) return enviar('preciso ser ADM')
+if (!isBotGroupAdmins) return enviar('preciso ser ADM')
 try {
 await duda.groupUpdateSubject(from, `${q}`)
 enviar('Nome alterado com sucesso ✓')
@@ -868,7 +868,7 @@ case 'rebaixar':// BY ALIZINDEV
 if (!m.isGroup) return enviar('so para grupo')
 if (!isgroupAdmins) return enviar('So ADM Po')
 if (q < 1) return enviar('Digite o número, animal')
-if (!isBotgroupAdmins) return enviar('preciso ser ADM')
+if (!isBotGroupAdmins) return enviar('preciso ser ADM')
 try {
 duda.groupParticipantsUpdate(from, [`${q}@s.whatsapp.net`], 'demote')
 enviar(`${q} Foi rebaixado a membro comum com sucesso ✓`)
@@ -882,7 +882,7 @@ case 'promover':// BY ALIZINDEV
 if (!isGroup) return enviar('so para grupo')
 if (!isgroupAdmins) return enviar('So ADM Po')
 if (q < 1) return enviar('Cade o número, mongolóide')
-if (!isBotgroupAdmins) return enviar('preciso ser ADM')
+if (!isBotGroupAdmins) return enviar('preciso ser ADM')
 try {
 duda.groupParticipantsUpdate(from, [`${q}@s.whatsapp.net`], 'promote')
 enviar(`${q} Foi promovido a adm com sucesso ✓`)
@@ -895,7 +895,7 @@ break
 case 'seradm':// BY ALIZINDEV 
 if (!m.isGroup) return enviar('so para grupo')
 if (!Dono) return enviar('so para dono')
-if (!isBotgroupAdmins) return enviar('preciso ser ADM')
+if (!isBotGroupAdmins) return enviar('preciso ser ADM')
 try {
 duda.groupParticipantsUpdate(from, [`${sender}`], 'promote')
 enviar('Okay, mestre agora você e adm ✓')
@@ -908,7 +908,7 @@ break
 case 'sermembro':// BY ALIZINDEV 
 if (!m.isGroup) return enviar('so para grupo')
 if (!Dono) return enviar('so para dono')
-if (!isBotgroupAdmins) return enviar('preciso ser ADM')
+if (!isBotGroupAdmins) return enviar('preciso ser ADM')
 try {
 duda.groupParticipantsUpdate(from, [`${sender}`], 'demote')
 enviar('Okay, mestre agora você e um membro ✓')
@@ -925,8 +925,8 @@ case 'kick':// BY ALIZINDEV
 case 'b':// BY ALIZINDEV 
 {
 if (!m.isGroup) return reply('so em grupo')
-if (!isgroupAdmins) return reply('so adm')
-if (!isBotgroupAdmins) return reply('preciso ser adm')
+if (!isGroupAdmins) return reply('so adm')
+if (!isBotGroupAdmins) return reply('preciso ser adm')
 if (info.message.extendedTextMessage === undefined || info.message.extendedTextMessage === null) return reply('Responda a mensagem ou marque as pessoas que você quer remover do grupo')
 if(info.message.extendedTextMessage.contextInfo.participant !== null && info.message.extendedTextMessage.contextInfo.participant != undefined && info.message.extendedTextMessage.contextInfo.participant !== "") {
 mentioned = info.message.extendedTextMessage.contextInfo.mentionedJid[0] ? info.message.extendedTextMessage.contextInfo.mentionedJid[0] : info.message.extendedTextMessage.contextInfo.participant
@@ -965,8 +965,8 @@ break
 case 'antifake': // BY ALIZINDEV 
 case 'varfake': // BY ALIZINDEV
 if (!m.isGroup) return m.reply('Só em Grupo')
-if (!isgroupAdmins) return m.reply('Você Não é Adm')
-if (!isBotgroupAdmins) return m.reply('o bot precisa ser adm')
+if (!isGroupAdmins) return m.reply('Você Não é Adm')
+if (!isBotGroupAdmins) return m.reply('o bot precisa ser adm')
 if (args.length < 1) return m.reply('Ative pressione 1, Desativar pressione 0')
 if (Number(args[0]) === 1) {
 if (isAntifake) return m.reply(`O recurso de  Anti fake já está Ativado neste grupo: ${groupName}`)
@@ -1032,8 +1032,8 @@ break
 
 case 'antilink':// BY ALIZINDEV 
 if(!isGroup) return reply('so em grupo')
-if (!isgroupAdmins) return reply('so adm po')
-if (!isBotgroupAdmins) return reply('preciso ser adm')
+if (!isGroupAdmins) return reply('so adm po')
+if (!isBotGroupAdmins) return reply('preciso ser adm')
 if (args.length < 1) return reply(`ativar: 1 , desativar: 0\nEXEMPLE: ${prefixo}antilink 1`)
 if (Number(args[0]) === 1) {
 if (isAntilinkHard) return reply('Ja esta ativo')
