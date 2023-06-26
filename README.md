@@ -51,7 +51,16 @@ sh alizin.sh
 ```
 cd /sdcard/duda-base && sh alizin.sh
 ```
+ <h2 align="center">⚙️ UTILIZE O CMD sh atualizar.sh</h2>
 
+```
+### • USE O CMD " sh atualizar.sh "
+### • ESSE COMANDO SERVE PARA QUANDO TIVER UMA ATUALIZAÇÃO, E VC VIU QUE TEM UMA ATUALIZAÇÃO.
+### • VC VAI USAR ESSE CMD! VC VAI NO TERMUX E DIGITA " CTRL C ", CLICA NO " CTRL E DPS NA LETRA C "
+### • E DIGITE: sh atualizar.sh 
+### • PRONTO. O BOT VAI SER AUTO-ATUALIZAR
+```
+ 
  <h2 align="center">⚙️ INSTRUÇÕES</h2>
 
    
