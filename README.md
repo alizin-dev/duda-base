@@ -10,7 +10,7 @@
 
 <p align="center">
 <img title="Autor" src="https://img.shields.io/badge/Autor-ALIZIN.DEV-orange.svg?style=for-the-badge&logo=github"></a>
-<img title="Versão" src="https://img.shields.io/badge/Versão-1.0.0-orange.svg?style=for-the-badge&logo=github"></a>
+<img title="Versão" src="https://img.shields.io/badge/Versão-3.0.0-orange.svg?style=for-the-badge&logo=github"></a>
 </p>
 
 ### <h3>Sem Servidor Para Deixar O Bot Em 24H/48H Online, Clica No Botão Abaixo:

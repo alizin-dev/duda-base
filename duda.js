@@ -614,43 +614,6 @@ reply(`Grupo desbanido...`)
 break
 
 
-case 'autoban':// BY ALIZINDEV 
-if (!m.isGroup) return reply('Você Não é Adm')
-if (!isgroupAdmins && !Dono) return reply('Precisa ser Dono')
-if (args.length < 1) return reply('Hmmmm')
-if (Number(args[0]) === 1) {
-if(isAdeusCara) return reply("Já está ativado.")
-var ind = dbids.indexOf(from)
-if(isAdeusCara) {
-adeuscara[ind].actived = true
-} else {
-adeuscara.push({
-groupId: from,
-actived: true,
-number: []
-})
-}
-fs.writeFileSync('./BANCO DE DADOS/grupos/adeuscara.json', JSON.stringify(adeuscara, null, 2) + '\n')
-reply(`Ativou com sucesso o recurso de autoban neste grupo✔️`)
-} else if (Number(args[0]) === 0) {
-if(!isAdeusCara) return reply("Já está Desativado.")
-var ind = dbids.indexOf(from)
-if(isAdeusCara) {
-adeuscara[ind].actived = false
-} else {
-adeuscara.push({
-groupId: from,
-actived: false,
-number: []
-})
-}
-fs.writeFileSync('./BANCO DE DADOS/grupos/adeuscara.json', JSON.stringify(adeuscara, null, 2) + '\n')
-reply(`Desativou com sucesso o recurso de autoban neste grupo✔️`)
-} else {
-reply('1 para ativar, 0 para desativar')
-}
-break
-
 
 case 'marcar':// BY ALIZINDEV 
 if (!m.isGroup) return enviar('so em grupos')
@@ -738,18 +701,21 @@ case 'dono':// BY ALIZINDEV
 case 'criador':// BY ALIZINDEV 
 case 'creator':// BY ALIZINDEV 
 case 'owner':// BY ALIZINDEV 
-await delay(5000)
-try {
+await delay(5000)///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+try {////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 duda.sendMessage(from, { contacts: { displayName: `ALIZIN-DEV`, contacts: [{ vcard }]
 }})
 } catch(e) {
 console.log(e)
 enviar('erro...')
 }
-break
+break // NÃO PRECISA MUDAR AKI, SÃO MEUS CRÉDITOS...
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-case 'ping':// BY ALIZINDEV 
-enviar(`Velocidade de resposta ${latensi.toFixed(4)} segundos`)
+case 'ping':// BY ALIZINDEV
+timestampe = speed();
+latensie = speed() - timestampe 
+enviar(`Velocidade de resposta ${latensie.toFixed(4)} segundos`)
 break
 
 case 'sair':// BY ALIZINDEV 
