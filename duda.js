@@ -1,4 +1,34 @@
 
+/*
+Olá usuário do bot, eu sou o ALIZIN-DEV, O { ANONYMOUS } PRA QUEM ME CONHECE, e apresento essa versão da DUDA Bot com comandos simples. Sei que nem todos tem condições de comprar ou alugar um Bot, por isso foi criada essa versão.
+
+Sinta-se livre pra editar o nome e as coisas no Bot, porém deixem pelo menos meus CRÉDITOS POR GENTILEZA 🗿🍷.
+
+Se tiver algum problema fale comigo!
+
+MEU NÚMERO;
+
+/////
+ALIZIN-DEV
+wa.me/5521989701174
+////
+
+
+////////////
+MEU INSTA: @HACKZINHOX
+//////
+
+ALIZIN DOMINA, SIM OU CLARUH?? 🙈
+( TÔ GASTANDO )
+
+
+BYE BYE
+( QUALQUER ERRO NA SABE ): BROTA NO PV;
+ALIZIN-DEV
+wa.me/5521989701174
+
+/// BY ALIZINDEV \\\\
+*/
 
 
 /// BY ALIZINDEV \\\\
