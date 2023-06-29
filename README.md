@@ -44,7 +44,7 @@ cd /sdcard/duda-base
 ```
 **6° COMANDO ( INSTALAÇÃO,dependências para o bot funfar )**
 ```
-sh alizin.sh
+sh instalacao.sh
 ```
 
 ## SE O TERMUX FECHOU, DIGITE; <img src="https://user-images.githubusercontent.com/108157095/182053901-78e4a217-51ba-42a3-8ec5-38ed978ad752.png" height="25px">
