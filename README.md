@@ -40,7 +40,7 @@ git clone https://github.com/alizin-dev/duda-base.git
 ```
 **5° COMANDO ( ENTRAR NA PASTA DO BOT )**
 ```
-cd /sdcard/duda-base
+cd duda-base
 ```
 **6° COMANDO ( INSTALAÇÃO,dependências para o bot funfar )**
 ```
