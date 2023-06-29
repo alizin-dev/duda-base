@@ -42,7 +42,7 @@ git clone https://github.com/alizin-dev/duda-base.git
 ```
 cd /sdcard/duda-base
 ```
-**6° COMANDO ( PARA LIGAR O BOT )**
+**6° COMANDO ( INSTALAÇÃO,dependências para o bot funfar )**
 ```
 sh alizin.sh
 ```
