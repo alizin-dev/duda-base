@@ -27,11 +27,11 @@ BYE BYE
 ALIZIN-DEV
 wa.me/5521989701174
 
-/// BY ALIZINDEV \\\\
+/// BY ALIZINDEV BY ALIZIN DEV \\\\
 */
 
 
-/// BY ALIZINDEV \\\\
+/// BY ALIZINDEV BY ALIZIN DEV \\\\
 
 require('./configuracao')
 
@@ -577,10 +577,10 @@ switch(comando) {
 
 
 
-case 'help':// BY ALIZINDEV 
-case 'cmds':// BY ALIZINDEV 
-case 'comandos':// BY ALIZINDEV 
-case 'menu':// BY ALIZINDEV 
+case 'help':// BY ALIZINDEV BY ALIZIN DEV 
+case 'cmds':// BY ALIZINDEV BY ALIZIN DEV 
+case 'comandos':// BY ALIZINDEV BY ALIZIN DEV 
+case 'menu':// BY ALIZINDEV BY ALIZIN DEV 
 FotoDaDudaBot = await getBuffer(`${logo}`) 
 await duda.sendMessage(from, {image: FotoDaDudaBot, caption: menu(pushname, sender, data, hora, prefixo)}, {quoted: info})
 break 
@@ -588,9 +588,9 @@ break
 
 
 
-case 'bemvindo':// BY ALIZINDEV 
-case 'welcome':// BY ALIZINDEV 
-case 'varbemvindo':// BY ALIZINDEV 
+case 'bemvindo':// BY ALIZINDEV BY ALIZIN DEV 
+case 'welcome':// BY ALIZINDEV BY ALIZIN DEV 
+case 'varbemvindo':// BY ALIZINDEV BY ALIZIN DEV 
 if (!m.isGroup) return reply('Só em Grupo')
 if (!isgroupAdmins) return reply('Você Não é Adm')
 if (!isBotgroupAdmins) return reply('preciso ser adm')
@@ -625,7 +625,7 @@ reply('https://github.com/alizin-dev/duda-base')
 break
 
 
-case 'bangp':// BY ALIZINDEV 
+case 'bangp':// BY ALIZINDEV BY ALIZIN DEV 
 if (!m.isGroup) return reply(`So Em Grupos ${pushname}`)
 if (!Dono) return reply(`so dono ${pushname}`)
 if (isBanchat) return reply(`Este grupo ja está banido`)
@@ -634,7 +634,7 @@ fs.writeFileSync('./BANCO DE DADOS/banchat.json', JSON.stringify(bancht))
 reply(`Grupo banido com sucesso`)
 break
 
-case 'unbangp':// BY ALIZINDEV 
+case 'unbangp':// BY ALIZINDEV BY ALIZIN DEV 
 if (!isGroup) return reply(`So Em Grupos ${pushname}`)
 if (!Dono && !isnit && !issupre && !ischyt && !info.key.fromMe) return reply(`so dono ${pushname}`)
 let cur = bancht.indexOf(from)
@@ -645,7 +645,7 @@ break
 
 
 
-case 'marcar':// BY ALIZINDEV 
+case 'marcar':// BY ALIZINDEV BY ALIZIN DEV 
 if (!m.isGroup) return enviar('so em grupos')
 if (!isgroupAdmins) return enviar('so adm')
 try {
@@ -663,9 +663,9 @@ enviar('erro...')
 }
 break
 
-case 'admins':// BY ALIZINDEV 
-case 'listadmins':// BY ALIZINDEV 
-case 'listaadmins':// BY ALIZINDEV 
+case 'admins':// BY ALIZINDEV BY ALIZIN DEV 
+case 'listadmins':// BY ALIZINDEV BY ALIZIN DEV 
+case 'listaadmins':// BY ALIZINDEV BY ALIZIN DEV 
 if (!m.isGroup) return enviar('so em grupos')
 teks = `Lista de administradores do grupo *${groupMetadata.subject}*\nTotal : ${groupAdmins.length}\n\n`
 no = 0
@@ -677,7 +677,7 @@ mentions(teks, groupAdmins, true)
 break
 
 
-case 'toimg':// BY ALIZINDEV 
+case 'toimg':// BY ALIZINDEV BY ALIZIN DEV 
 if (!isQuotedSticker) return enviar('Marca uma fig, seu animal')
 buff = await getFileBuffer(info.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage, 'sticker')
 try {
@@ -688,7 +688,7 @@ enviar('erro...')
 }
 break
 
-case 'sticker': case 's': case 'stickergif': case 'sgif': {// BY ALIZINDEV 
+case 'sticker': case 's': case 'stickergif': case 'sgif': {// BY ALIZINDEV BY ALIZIN DEV 
 if (/image/.test(mime)) {
 reply(`${MensageAleatoria}`)
 media = await quoted.download()
@@ -706,7 +706,7 @@ reply(`Enviar imagem/vídeo com legenda ${prefixo + comando}\nDuração Video 1/
 break
 
 
-case 'perfil':// BY ALIZINDEV 
+case 'perfil':// BY ALIZINDEV BY ALIZIN DEV 
 try {
 bla = fs.readFileSync('./BANCO DE DADOS/audios/criatura.mp3')
 duda.sendMessage(from, {audio: bla, mimetype: 'audio/mp4', ptt:true}, {quoted: info})
@@ -726,11 +726,11 @@ SuaFtAleatoria = await getBuffer(ppimg)
 duda.sendMessage(from, {image: SuaFtAleatoria, caption: LetrasDoCmd}, {quoted: info})
 break
 
-case 'suporte':// BY ALIZINDEV 
-case 'dono':// BY ALIZINDEV 
-case 'criador':// BY ALIZINDEV 
-case 'creator':// BY ALIZINDEV 
-case 'owner':// BY ALIZINDEV 
+case 'suporte':// BY ALIZINDEV BY ALIZIN DEV 
+case 'dono':// BY ALIZINDEV BY ALIZIN DEV 
+case 'criador':// BY ALIZINDEV BY ALIZIN DEV 
+case 'creator':// BY ALIZINDEV BY ALIZIN DEV 
+case 'owner':// BY ALIZINDEV BY ALIZIN DEV 
 await delay(5000)///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 try {////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 duda.sendMessage(from, { contacts: { displayName: `ALIZIN-DEV`, contacts: [{ vcard }]
@@ -742,13 +742,13 @@ enviar('erro...')
 break // NÃO PRECISA MUDAR AKI, SÃO MEUS CRÉDITOS...
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-case 'ping':// BY ALIZINDEV
+case 'ping':// BY ALIZINDEV BY ALIZIN DEV
 timestampe = speed();
 latensie = speed() - timestampe 
 enviar(`Velocidade de resposta ${latensie.toFixed(4)} segundos`)
 break
 
-case 'sair':// BY ALIZINDEV 
+case 'sair':// BY ALIZINDEV BY ALIZIN DEV 
 if (!m.isGroup) return enviar('so para grupo')
 if (!Dono) return enviar('so para dono')
 enviar('Bye,Bye meus amigos amigos 😔👍🏾')
@@ -760,7 +760,7 @@ enviar('erro...')
 }
 break
 
-case 'executar':// BY ALIZINDEV 
+case 'executar':// BY ALIZINDEV BY ALIZIN DEV 
 if (!Dono) return enviar('so para dono')
 if (args.length < 1) return enviar('Vou executar oq?')
 try {
@@ -772,7 +772,7 @@ console.log(e)
 }
 break
 
-case 'gplink':// BY ALIZINDEV 
+case 'gplink':// BY ALIZINDEV BY ALIZIN DEV 
 if (!m.isGroup) return enviar('so para grupo')
 if (!isgroupAdmins) return enviar('So ADM Po')
 if (!isBotgroupAdmins) return enviar('preciso ser ADM')
@@ -780,8 +780,8 @@ const link = await duda.groupInviteCode(from)
 enviar(`Link do grupo : https://chat.whatsapp.com/${link}`)
 break
 
-case 'resetarlink':// BY ALIZINDEV 
-case 'resetalink':// BY ALIZINDEV 
+case 'resetarlink':// BY ALIZINDEV BY ALIZIN DEV 
+case 'resetalink':// BY ALIZINDEV BY ALIZIN DEV 
 if (!m.isGroup) return enviar('so para grupo')
 if (!isgroupAdmins) return enviar('So ADM Po')
 if (!isBotgroupAdmins) return enviar('preciso ser ADM')
@@ -794,8 +794,8 @@ enviar('erro...')
 }
 break
 
-case 'gp':// BY ALIZINDEV 
-case 'grupo':// BY ALIZINDEV 
+case 'gp':// BY ALIZINDEV BY ALIZIN DEV 
+case 'grupo':// BY ALIZINDEV BY ALIZIN DEV 
 if (!m.isGroup) return enviar('so para grupo')
 if (!isgroupAdmins) return enviar('So ADM Po')
 if (!isBotgroupAdmins) return enviar('preciso ser ADM')
@@ -823,7 +823,7 @@ enviar('erro...')
 }
 break
 
-case 'infogp':// BY ALIZINDEV 
+case 'infogp':// BY ALIZINDEV BY ALIZIN DEV 
 if (!m.isGroup) return enviar('so para grupo')
 if (!isBotgroupAdmins) return enviar('preciso ser ADM')
 enviar(`
@@ -835,8 +835,8 @@ enviar(`
 `)
 break
 
-case 'mudardk':// BY ALIZINDEV 
-case 'mudadk':// BY ALIZINDEV 
+case 'mudardk':// BY ALIZINDEV BY ALIZIN DEV 
+case 'mudadk':// BY ALIZINDEV BY ALIZIN DEV 
 if (!m.isGroup) return enviar('so para grupo')
 if (!isgroupAdmins) return enviar('So ADM Po')
 if (!isBotgroupAdmins) return enviar('preciso ser ADM')
@@ -850,8 +850,8 @@ enviar('erro...')
 }
 break
 
-case 'mudarnm':// BY ALIZINDEV
-case 'mudanm': // BY ALIZINDEV
+case 'mudarnm':// BY ALIZINDEV BY ALIZIN DEV
+case 'mudanm': // BY ALIZINDEV BY ALIZIN DEV
 if (!m.isGroup) return enviar('so para grupo')
 if (!isgroupAdmins) return enviar('So ADM Po')
 if (!isBotgroupAdmins) return enviar('preciso ser ADM')
@@ -865,7 +865,7 @@ enviar('erro...')
 }
 break
 
-case 'rebaixar':// BY ALIZINDEV 
+case 'rebaixar':// BY ALIZINDEV BY ALIZIN DEV 
 if (!m.isGroup) return enviar('so para grupo')
 if (!isgroupAdmins) return enviar('So ADM Po')
 if (q < 1) return enviar('Digite o número, animal')
@@ -879,7 +879,7 @@ enviar('erro...')
 }
 break
 
-case 'promover':// BY ALIZINDEV 
+case 'promover':// BY ALIZINDEV BY ALIZIN DEV 
 if (!isGroup) return enviar('so para grupo')
 if (!isgroupAdmins) return enviar('So ADM Po')
 if (q < 1) return enviar('Cade o número, mongolóide')
@@ -893,7 +893,7 @@ enviar('erro...')
 }
 break
 
-case 'seradm':// BY ALIZINDEV 
+case 'seradm':// BY ALIZINDEV BY ALIZIN DEV 
 if (!m.isGroup) return enviar('so para grupo')
 if (!Dono) return enviar('so para dono')
 if (!isBotgroupAdmins) return enviar('preciso ser ADM')
@@ -906,7 +906,7 @@ enviar('erro...')
 }
 break
 
-case 'sermembro':// BY ALIZINDEV 
+case 'sermembro':// BY ALIZINDEV BY ALIZIN DEV 
 if (!m.isGroup) return enviar('so para grupo')
 if (!Dono) return enviar('so para dono')
 if (!isBotgroupAdmins) return enviar('preciso ser ADM')
@@ -921,11 +921,11 @@ break
 
 
 
-case 'ban': // BY ALIZINDEV 
-case 'kick':// BY ALIZINDEV 
-case 'b':// BY ALIZINDEV 
-case 'bani':// BY ALIZINDEV 
-case 'banir':// BY ALIZINDEV 
+case 'ban': // BY ALIZINDEV BY ALIZIN DEV 
+case 'kick':// BY ALIZINDEV BY ALIZIN DEV 
+case 'b':// BY ALIZINDEV BY ALIZIN DEV 
+case 'bani':// BY ALIZINDEV BY ALIZIN DEV 
+case 'banir':// BY ALIZINDEV BY ALIZIN DEV 
 {
 if (!m.isGroup) return reply('so em grupo')
 if (!isgroupAdmins) return reply('so adm')
@@ -965,8 +965,8 @@ else duda.sendMessage(from, {text: `Hmm parece que deu erro️`, mentions: [m.se
 }
 }
 break
-case 'antifake': // BY ALIZINDEV 
-case 'varfake': // BY ALIZINDEV
+case 'antifake': // BY ALIZINDEV BY ALIZIN DEV 
+case 'varfake': // BY ALIZINDEV BY ALIZIN DEV
 if (!m.isGroup) return m.reply('Só em Grupo')
 if (!isgroupAdmins) return m.reply('Você Não é Adm')
 if (!isBotgroupAdmins) return m.reply('o bot precisa ser adm')
@@ -996,7 +996,7 @@ reply(String(erro))
 }
 break
 
-case 'gerarnick':{ // BY ALIZINDEV 
+case 'gerarnick':{ // BY ALIZINDEV BY ALIZIN DEV 
 if (!q) return reply(`Exemple\n${prefix+command} AlizinDev`)
 let lizink_res = await fetchJson(`https://alizindev-api.onrender.com/api/tools/styletext?text=${q}&apikey=fc54fc77`)
 let lizinn = lizink_res.result
@@ -1008,32 +1008,29 @@ reply(alizinnk)
 }
 break
 
-case 'play': // BY ALIZINDEV 
+case 'play': // BY ALIZINDEV BY ALIZIN DEV //by: ALIZINDEV 
 if( args.length < 1) return reply(`Exemplo:\n${prefix}${command} Menozin Exibido`)
-alizinnk = body.slice(6)
-reply(`Ola ${pushname}, Estou Procurando A Sua Musica, Aguarde.`)
-lzzin = await fetchJson(`https://api.brizaloka-api.tk/sociais/youtubesrc?apikey=brizaloka&query=${alizinnk}`)
-Alizin = lzzin.resultados[0]
-AlizinPlay = `➡️ *Título:* ${Alizin.title}\n`
-AlizinPlay += `📬️ *Visualizações:* ${Alizin.views}\n`
-AlizinPlay += `🗞️️ *Canal:* ${Alizin.channel.name}\n`
-AlizinPlay += `⏳ *Duração:* ${Alizin.duration}\n`
+const AlizinHacker = await yts(q)
+AlizinPlay = `➡️ *Título:* ${AlizinHacker.all[0].title}\n`
+AlizinPlay += `📬️ *Visualizações:* ${AlizinHacker.all[0].views}\n`
+AlizinPlay += `🗞️️ *Canal:* ${AlizinHacker.all[0].author.name}\n`
 AlizinPlay += `🔎 _*Aguarde, estou enviando o áudio!*_`
-AlizinBuff = await getBuffer(Alizin.thumbnail)
+AlizinBuff = await getBuffer(`${AlizinHacker.all[0].image}`)
 await duda.sendMessage(m.chat, {image: AlizinBuff, caption: AlizinPlay}, {quoted: pfvDeus})
 try {
-AlizinMusica = await new Youtube().ytmp3(Alizin.link)
+AlizinMusica = await new Youtube().ytmp3(`${AlizinHacker.all[0].url}`)
 AlizinBuffer = await getBuffer(AlizinMusica.dl_link)
 reply('[🩸]  Estou Baixando [🩸]')
-duda.sendMessage(m.chat, {audio: AlizinBuffer, mimetype: 'audio/mpeg'}, {quoted: pfvDeus})
+duda.sendMessage(m.chat, {audio: AlizinBuffer, mimetype: 'audio/mp4'}, {quoted: pfvDeus})
 }
 catch (e){
 console.log(e)
 reply(`Não Encontrei o Que Você Quer, Tente Novamente.`)
 }
+// BY ALIZINDEV BY ALIZIN DEV //by: ALIZINDEV 
 break
 
-case 'antilink':// BY ALIZINDEV 
+case 'antilink':// BY ALIZINDEV BY ALIZIN DEV 
 if(!isGroup) return reply('so em grupo')
 if (!isgroupAdmins) return reply('so adm po')
 if (!isBotgroupAdmins) return reply('preciso ser adm')
