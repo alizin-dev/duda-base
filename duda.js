@@ -996,10 +996,11 @@ reply(String(erro))
 }
 break
 
-case 'gerarnick':{ // BY ALIZINDEV BY ALIZIN DEV 
+case 'gerarnick':{ // BY ALIZINDEV //by: ALIZINDEV 
+ case 'fazernick':{ // BY ALIZINDEV //by: ALIZINDEV 
 if (!q) return reply(`Exemple\n${prefix+command} AlizinDev`)
-let lizink_res = await fetchJson(`https://alizindev-api.onrender.com/api/tools/styletext?text=${q}&apikey=fc54fc77`)
-let lizinn = lizink_res.result
+let lizink_res = await fetchJson(`https://alizindev-api.onrender.com/api/tools/styletext?text=${q}&apikey=a93e85c1`)
+let lizinn = lizink_res.resultado
 let alizinnk =`*NICKS*\n\n`
 for (let x of lizinn){
 alizinnk +=`RESULTADO : ${x.result}\n\n`
