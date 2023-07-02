@@ -73,9 +73,9 @@ VC VAI USAR ESSE CMD! VC VAI NO TERMUX E DIGITA " CTRL C ", CLICA NO CTRL E DPS 
 E DIGITE: sh gerarqr.sh 
 PRONTO. O BOT VAI APAGAR O QRCODE E DPS VAI SE AUTO-ATUALIZAR!
 ```
-sh gerarqr.sh
-```
 
+```
+sh gerarqr.sh
 ```
 ### <h2 align="center">⚙️ INSTRUÇÕES</h2>
 
