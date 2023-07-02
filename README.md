@@ -75,7 +75,8 @@ PRONTO. O BOT VAI APAGAR O QRCODE E DPS VAI SE AUTO-ATUALIZAR!
 ```
 sh gerarqr.sh
 ```
- 
+
+```
 ### <h2 align="center">⚙️ INSTRUÇÕES</h2>
 
    
