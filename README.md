@@ -15,7 +15,7 @@
 
 ### <h3>Sem Servidor Para Deixar O Bot Em 24H/48H Online, Clica No Botão Abaixo:
    <br>
-<a href="https://youtu.be/-Rqmm8xS90o">0 - Site Da Replit (Video Ensinando)</a>
+<a href="https://youtu.be/Mj2zK6IvT8M">0 - Site Da Replit (Video Ensinando)</a>
   </br>
 </h3>
 </div>
