@@ -1,0 +1,2 @@
+language="nodejs"
+run="yarn && pm2 start sh alizin.sh && pm2 save && pm2 logs"
