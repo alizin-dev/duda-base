@@ -1066,11 +1066,6 @@ default:
 
 var budy2 = body.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 
-if (budy2.includes("duda")){
-if(info.key.fromMe) return 
-reply("DUDA - BASE - SOLA")
-}
-
 if (budy === `${prefixo}`) {
 duda.sendMessage(from, {text: `Se desejar visualizar o menu, por favor, digite ${prefixo}menu` }, {quoted: info })
 } else if (budy.startsWith(`${prefixo}`)) {
