@@ -14,7 +14,7 @@ global.NomeDobot = 'DUDA-BOT-BASE' //Preencha aqui como o primeiro campo Para o 
 
 global.prefixo = '.' //Preencha aqui como o primeiro campo Para o seu prefixo ( COMANDO ANTES DO COMANDO )
 
-global.NumeroDoDonoA = ['5521989701174'] //Preencha aqui como o primeiro campo Para o seu NUMERO ( SEM O ' + ' VALEU )
+global.NumeroDoDonoA = ['5522997625501'] //Preencha aqui como o primeiro campo Para o seu NUMERO ( SEM O ' + ' VALEU )
 
 
 ///// NÃO PRECISA MEXER AKI \\\\
