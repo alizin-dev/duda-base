@@ -1,11 +1,10 @@
 {
   "name": "DUDA-BOT-MD",
-  "version": "3.0.0",
-  "description": "DUDA-BASE É UMA BOT ( BASE ) PARA VC FAZER O SEU PRÓPRIO BOT. SEM PRECISAR FAZER TUDO... ( TOTALMENTE ) ENTÃO... ESPERO QUE GOSTE :/",
+  "version": "2.0.0",
+  "description": "🚀 DUDA-BASE: Sua base para criar bots WhatsApp de forma fácil e rápida! Não se preocupe em começar do zero. DUDA-BASE cuida disso para você! 😎",
   "main": "index.js",
-  "main": "comandos.js",
   "scripts": {
-    "start": "sh alizin.sh",
+    "start": "sh duda.sh",
     "mongo": "node . --db 'mongodb+srv://Metafor1000:metafor1000@cluster0.qy9jg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'",
     "test": "node test.js",
     "test2": "nodemon index.js --server --autocleartmp"
@@ -15,7 +14,6 @@
     "openwa-md",
     "whatsapp",
     "js-whatsapp",
-    "whatsapp",
     "bot-duda",
     "wabot-aq",
     "multi-device",
@@ -27,14 +25,14 @@
   "author": "ALIZIN-DEV",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alizin-dev"
+    "url": "git+https://github.com/alizin-dev-duda-base"
   },
   "bugs": {
-    "url": "https://github.com/alizin-dev"
+    "url": "https://github.com/alizin-dev/issues"
   },
   "license": "MIT",
   "dependencies": {
-    "@adiwajshing/baileys" : "npm:baileys@^6.0.8",
+    "@whiskeysockets/baileys": "^6.6.0",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@bochilteam/scraper": "0.0.81",
     "async": "^3.2.1",
@@ -53,6 +51,7 @@
     "fluent-ffmpeg": "^2.1.2",
     "form-data": "^4.0.0",
     "fs-extra": "^10.0.0",
+    "ytdl-core":"^4.5.0",
     "g-i-s": "^2.1.6",
     "genshin": "^1.2.4",
     "google-it": "^1.6.2",
@@ -86,4 +85,3 @@
   },
   "devDependencies": {}
 }
-  

@@ -4,11 +4,12 @@
    * Git https://github.com/DikaArdnt
 */
 
-const { proto, delay, getContentType } = require('@adiwajshing/baileys')
+const { proto, delay, getContentType } = require('@whiskeysockets/baileys')
 const chalk = require('chalk')
 const fs = require('fs')
 const Crypto = require('crypto')
 const axios = require('axios')
+const mimetype = require('mime-types')
 const moment = require('moment-timezone')
 const { sizeFormatter } = require('human-readable')
 const util = require('util')
@@ -30,6 +31,11 @@ exports.generateMessageTag = (epoch) => {
 exports.processTime = (timestamp, now) => {
 	return moment.duration(now - moment(timestamp * 1000)).asSeconds()
 }
+
+exports.getExtension = async (type) => {
+	return await mimetype.extension(type)
+}
+
 
 exports.getRandom = (ext) => {
     return `${Math.floor(Math.random() * 10000)}${ext}`
@@ -120,6 +126,23 @@ exports.formatDate = (n, locale = 'id') => {
 	})
 }
 
+
+exports.getGroupAdmins = (participants) => {
+admins = []
+for (let i of participants) {
+if(i.admin == 'admin') admins.push(i.id)
+if(i.admin == 'superadmin') admins.push(i.id)
+}
+return admins
+}
+
+/**
+ * Serialize Message
+ * @param {WAConnection} conn 
+ * @param {Object} m 
+ * @param {store} store 
+ */
+ 
 exports.tanggal = (numer) => {
 	myMonths = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
 				myDays = ['Minggu','Senin','Selasa','Rabu','Kamis','Jum’at','Sabtu']; 

@@ -6,6 +6,8 @@ const {
 default: 
 makeWASocket,
 useMultiFileAuthState, 
+PHONENUMBER_MCC,
+makeCacheableSignalKeyStore,
 DisconnectReason,
 fetchLatestBaileysVersion, 
 generateForwardMessageContent, 
@@ -18,13 +20,15 @@ makeInMemoryStore,
 jidDecode, 
 delay,
 proto
- } = require("@adiwajshing/baileys")
+ } = require("@whiskeysockets/baileys")
 
-const { state, saveCreds } = useMultiFileAuthState(`./QR-DA-DUDA-BOT`)
+const { state, saveCreds } = useMultiFileAuthState(`./𝐐𝐑-𝐃𝜟-𝐃𝐔𝐃𝜟-𝐁𝚯𝐓`)
 
 const { upload } = require('./BANCO DE DADOS/tourl');
 
 const { exec } = require("child_process")
+
+const NodeCache = require("node-cache")
 
 const sessionName = global.sessionName
 
@@ -87,12 +91,12 @@ const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, awa
   "🕓 DUDA",
   "🕔 DUDA-B",
   "🕕 DUDA-BO",  
-  "🕖 DUDA-BOT", 
-  "🕗 DUDA-BOT CO", 
-  "🕘 DUDA-BOT CONE",
-  "🕙 DUDA-BOT CONEC", 
-  "🕚 DUDA-BOT CONECTAN", 
-  "🕛 DUDA-BOT CONECTANDO...",
+  "🕖 DUDA-BOT B", 
+  "🕗 DUDA-BOT BA CO", 
+  "🕘 DUDA-BOT BAS CONE",
+  "🕙 DUDA-BOT BASE CONEC", 
+  "🕚 DUDA-BOT BASE CONECTAN", 
+  "🕛 DUDA-BOT BASE CONECTANDO...",
   ]}
 //=====================================     
  let globalSpinner;
@@ -129,54 +133,103 @@ const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, awa
     const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
 
 // ==================================== \\     
+        const msgRetryCounterCache = new NodeCache();
+    
+        const readline = require("readline");
+       
+        let phoneNumber = `${NumeroDoDonoA}`
+
+        const pairingCode = !!phoneNumber || process.argv.includes("--Alizin-Codiguin")
+        
+        const useMobile = process.argv.includes("--mobile")
+
+        const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
+        
+        const question = (text) => new Promise((resolve) => rl.question(text, resolve))
 
         NomeDoBot = global.NomeDoBot
         async function startduda() {
-        var qrcode = `./QR-DA-DUDA-BOT`
-        const { state, saveCreds } = await useMultiFileAuthState(qrcode)
+        
+        let { version, isLatest } = await fetchLatestBaileysVersion()
         console.log(banner2.string)
         console.log(banner3.string)
-        const duda = makeWASocket({
+    const {  state, saveCreds } =await useMultiFileAuthState(`./𝐐𝐑-𝐃𝜟-𝐃𝐔𝐃𝜟-𝐁𝚯𝐓`)
+    
+    const msgRetryCounterCache = new NodeCache() // para mensagem de nova tentativa, "mensagem de espera"
+    
+    const duda = makeWASocket({
         logger: pino({ level: 'silent' }),
-        printQRInTerminal: true,
-        browser: ['DUDA-BOT','opera','V4.0'],
-        patchMessageBeforeSending: (message) => {
-        const requiresPatch = !!(
-        message.buttonsMessage ||
-        message.listMessage
-        );
-        if (requiresPatch) {
-         message = {
-         viewOnceMessage: {
-         message: {
-         messagecontextInfo: {
-         deviceListMetadataVersion: 2,
-         deviceListMetadata: {},
-         },
-         ...message,
-         },
-         },
-         };
-         }
-        return message;
-         },
-        auth: state //ESSE NOME PODE TROCAR
-        })    
+        printQRInTerminal: !pairingCode, // aparecendo QR no log do terminal
+      mobile: useMobile, // API móvel (propensa a banimentos)
+      browser: [ "Ubuntu", "Chrome", "20.0.04" ],// para estes problemas https://github.com/WhiskeySockets/Baileys/issues/328
+     auth: {
+         creds: state.creds,
+         keys: makeCacheableSignalKeyStore(state.keys, pino({ level: "fatal" }).child({ level: "fatal" })),
+      },
+      markOnlineOnConnect: true, // definir falso para off-line
+      generateHighQualityLinkPreview: true, // criar link de visualização alto
+      getMessage: async (key) => {
+         let jid = jidNormalizedUser(key.remoteJid)
+         let msg = await store.loadMessage(jid, key.id)
 
-        store.bind(duda.ev)
+         return msg?.message || ""
+      },
+      msgRetryCounterCache, // Resolver mensagens em espera
+      defaultQueryTimeoutMs: undefined, //para estes problemas https://github.com/WhiskeySockets/Baileys/issues/276
+   })
+   
+   store.bind(duda.ev)
         
         
         
-    require('./menu/menu')
+    require('./BANCO DE DADOS/MENU/menu.js')
+    require('./BANCO DE DADOS/MENU/menu2.js')
 	require('./configuracao')
 	require('./duda')
 	require('./index')
-    nocache('./menu/menu', Módulo => console.log(chalk.greenBright('[ 𝐖𝐇𝜟𝐓𝐒𝜟𝐏𝐏 𝐁𝚯𝐓 ] ') + hora + chalk.cyanBright(` 𝐌𝚯́𝐃𝐔𝐋𝚯 "${Módulo}" ATUALIZADO`)))
-	nocache('./configuracao', Módulo => console.log(chalk.greenBright('[ 𝐖𝐇𝜟𝐓𝐒𝜟𝐏𝐏 𝐁𝚯𝐓 ] ') + hora + chalk.cyanBright(` 𝐌𝚯́𝐃𝐔𝐋𝚯 "${Módulo}" 𝜟𝐓𝐔𝜟𝐋𝐈𝐙𝜟𝐃𝚯❗`)))
-	nocache('./duda', Módulo => console.log(chalk.greenBright('[ 𝐖𝐇𝜟𝐓𝐒𝜟𝐏𝐏 𝐁𝚯𝐓 ] ') + hora + chalk.cyanBright(` 𝐌𝚯́𝐃𝐔𝐋𝚯 "${Módulo}" 𝜟𝐓𝐔𝜟𝐋𝐈𝐙𝜟𝐃𝚯❗`)))
-	nocache('./index', Módulo => console.log(chalk.greenBright('[ 𝐖𝐇𝜟𝐓𝐒𝜟𝐏𝐏 𝐁𝚯𝐓 ] ') + hora + chalk.cyanBright(` 𝐌𝚯́𝐃𝐔𝐋𝚯 "${Módulo}" 𝜟𝐓𝐔𝜟𝐋𝐈𝐙𝜟𝐃𝚯❗`)))
+    nocache('./BANCO DE DADOS/MENU/menu.js', Módulo => console.log(chalk.greenBright('[ ⏤͟͞𝐃𝐔𝐃𝜟 𝐁𝚯𝐓 ] ') + hora + chalk.cyanBright(` 𝐌𝚯́𝐃𝐔𝐋𝚯 "${Módulo}" ATUALIZADO`)))
+    nocache('./BANCO DE DADOS/MENU/menu2.js', Módulo => console.log(chalk.greenBright('[ ⏤͟͞𝐃𝐔𝐃𝜟 𝐁𝚯𝐓 ] ') + hora + chalk.cyanBright(` 𝐌𝚯́𝐃𝐔𝐋𝚯 "${Módulo}" ATUALIZADO`)))
+	nocache('./configuracao', Módulo => console.log(chalk.greenBright('[ ⏤͟͞𝐃𝐔𝐃𝜟 𝐁𝚯𝐓 ] ') + hora + chalk.cyanBright(` 𝐌𝚯́𝐃𝐔𝐋𝚯 "${Módulo}" 𝜟𝐓𝐔𝜟𝐋𝐈𝐙𝜟𝐃𝚯❗`)))
+	nocache('./duda', Módulo => console.log(chalk.greenBright('[ ⏤͟͞𝐃𝐔𝐃𝜟 𝐁𝚯𝐓 ] ') + hora + chalk.cyanBright(` 𝐌𝚯́𝐃𝐔𝐋𝚯 "${Módulo}" 𝜟𝐓𝐔𝜟𝐋𝐈𝐙𝜟𝐃𝚯❗`)))
+	nocache('./index', Módulo => console.log(chalk.greenBright('[ ⏤͟͞𝐃𝐔𝐃𝜟 𝐁𝚯𝐓 ] ') + hora + chalk.cyanBright(` 𝐌𝚯́𝐃𝐔𝐋𝚯 "${Módulo}" 𝜟𝐓𝐔𝜟𝐋𝐈𝐙𝜟𝐃𝚯❗`)))
 	
     
+    
+//login usa código de pareamento // código fonte https://github.com/WhiskeySockets/Baileys/blob/master/Example/example.ts#L61
+   if (pairingCode && !duda.authState.creds.registered) {
+      if (useMobile) throw new Error('Não é possível usar o código de pareamento com a API móvel')
+
+      let phoneNumber
+      if (!!phoneNumber) {
+         phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
+
+         if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
+            console.log(chalk.bgBlack(chalk.redBright("Inicie com o código do país para o seu número do WhatsApp. Por exemplo: +5522997625501")))
+            process.exit(0)
+         }
+      } else {
+         phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Por favor, compartilhe seu número do WhatsApp 😍, assim podemos nos conectar mais facilmente.\nPor exemplo: +5522997625501 : `)))
+         phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
+
+         // Pergunta novamente ao digitar o número errado
+         
+         if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
+            console.log(chalk.bgBlack(chalk.redBright("Inicie com o código do país para o seu número do WhatsApp. Por exemplo: +5522997625501")))
+
+            phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Por favor, compartilhe seu número do WhatsApp 😍, assim podemos nos conectar mais facilmente.\nPor exemplo: +5522997625501 : `)))
+            phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
+            rl.close()
+         }
+      }
+
+      setTimeout(async () => {
+         let code = await duda.requestPairingCode(phoneNumber)
+         code = code?.match(/.{1,4}/g)?.join("-") || code
+         console.log(chalk.black(chalk.bgGreen(`Seu Código Do ZipZop: `)), chalk.black(chalk.white(code)))
+      }, 3000)
+   }
+   
+   
 duda.ev.on('messages.upsert', async ({ messages }) => {
 try {
         mek = messages ? messages[0]: messages[1]
@@ -272,7 +325,7 @@ console.log(chalk.black(chalk.green('[ USUARIO ADICIONADO ]')), chalk.green(" Gr
                 const xbuffer = await getBuffer(ppuser)
                 let Xnome = num
 	           const members = metadata.participants.length
-                let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 666,status: 200, jpegThumbnail: sai_kk, surface: 200, message: `${metadata.subject}`, orderTitle: 'ALIZINDEV', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+                let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "5522997625501-1604595598@g.us"}, "message": {orderMessage: {itemCount: 666,status: 200, jpegThumbnail: sai_kk, surface: 200, message: `${metadata.subject}`, orderTitle: 'ALIZINDEV', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
                 xbody = `
 ┏━━━━━━[🗯]━━━━━━━━ ➤
 ┃•「 OLÁ 👋 」
@@ -296,7 +349,7 @@ console.log(chalk.black(chalk.green('[ USUARIO REMOVIDO ]')), chalk.green(" Grup
                 	const xbuffer = await getBuffer(ppuser)
                    	let nome = num
                     const members = metadata.participants.length
-                    let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 666,status: 200, jpegThumbnail: sai_kk, surface: 200, message: `${metadata.subject}`, orderTitle: ' SUR', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+                    let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "5522997625501-1604595598@g.us"}, "message": {orderMessage: {itemCount: 666,status: 200, jpegThumbnail: sai_kk, surface: 200, message: `${metadata.subject}`, orderTitle: ' SUR', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
                     xbody = `
 ┏━━━━━━[🗯]━━━━━━━━ ➤
 ┃•「 TCHAUZIN 👋 」

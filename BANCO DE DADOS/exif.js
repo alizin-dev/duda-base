@@ -1,9 +1,3 @@
-/**
-   * Criado pelo Mhankbarbar
-   * Contato -
-   * Redes sociais https://github.com/MhankBarBar
-*/
-
 
 const fs = require('fs')
 const { tmpdir } = require("os")

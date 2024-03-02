@@ -7,7 +7,7 @@ writeExifVid2
 } = require('./exif2');
 const {
 getBuffer
-} = require('../funcoes/functions.js');
+} = require('../funções/functions.js');
 
 const sendImageAsSticker2 = async (switzg, jid, path, quoted, options = {}) => {
 let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0);

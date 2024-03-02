@@ -1,38 +1,30 @@
-const fs = require('fs')
-const chalk = require('chalk')
+const fs = require('fs');
+const chalk = require('chalk');
 
+// ══════ [ CONFIGURAÇÕES ] ══════ \\
 
+    // ⚙️🩸 Configurações do Dono 🩸⚙️
+    global.NomeDoDono = '𝜟𝐥𝐢𝐳𝐢𝐧 𝐝𝐞𝐯 🙅🏾‍♂️',
+    global.LogoMenu = 'https://telegra.ph/file/f24fb6915422b0e885419.jpg',
+    global.NomeDoBot = '⏤͟͞𝐃𝐔𝐃𝜟-𝐁𝚯𝐓-𝐁𝜟𝐒𝐄',
 
-// ============ [ CONFIGURAÇÃO ] ============ \\
+    // 🩸🖥️ Configurações do Bot 🖥️🩸
+    global.prefixo = '.',
+    global.NumeroDoDonoA = ['5522997625501'],
+    banChats = false,
+    wlcm = [],
 
+    // 🎮 Configurações de Estilo 🎮
+    global.Author = '𝜟𝐥𝐢𝐳𝐢𝐧 𝐝𝐞𝐯 🙅🏾‍♂️',
+    global.Packname = '⏤͟͞𝐃𝐔𝐃𝜟-𝐁𝚯𝐓',
+    global.Packname2 = '𝐃𝐔𝐃𝜟-𝐌𝐔𝐋𝐓𝐈.𝐯𝟐',
+    global.SessionName = '𝐐𝐑-𝐃𝜟-𝐃𝐔𝐃𝜟-𝐁𝚯𝐓',
+    global.Linkgrupss = 'https =//chat.whatsapp.com/GcI1l0sflb2BMM199DmxOf'
 
-global.NomeDoDono = 'AlizinDev' //Preencha aqui como o primeiro campo Para o seu NOME
+// 🩸🩸 Mensagens Coloridas 🩸🩸
+const colors = {
+    Sucesso: chalk.green,
+    Erro: chalk.red,
+    Info: chalk.blue
+};
 
-global.menu = 'https://telegra.ph/file/b2d75aaaed21ed7b91d49.jpg' //Preencha aqui como o primeiro campo Para a sua LOGO > FOTO DO MENU. ( OU DE ALGO QUE VC DEFINIR )
-
-global.NomeDobot = 'DUDA-BOT-BASE' //Preencha aqui como o primeiro campo Para o nome do seu BOT
-
-global.prefixo = '.' //Preencha aqui como o primeiro campo Para o seu prefixo ( COMANDO ANTES DO COMANDO )
-
-global.NumeroDoDonoA = ['5522997625501'] //Preencha aqui como o primeiro campo Para o seu NUMERO ( SEM O ' + ' VALEU )
-
-
-///// NÃO PRECISA MEXER AKI \\\\
-global.banChats = false         /////
-                                /////
-global.wlcm = []                /////
-                                /////
-global.banChats = false         /////
-///// NÃO PRECISA MEXER AKI \\\\
-
-
-
-global.author = 'AlizinDev' //Preencha aqui como o primeiro campo Para o seu NOME ( NOME DA FIGURINHA )
-
-global.packname = 'DUDA-BASE' // Preencha aqui como o primeiro campo visivel a marca d'agua dos stickers. ( NOME DA FIGURINHA )
-
-global.packname2 = 'DUDA-MULTI' // Preencha aqui como o segundo campo visivel a marca d'agua dos stickers.
-
-global.sessionName = 'QR-DA-DUDA-BOT' // N precisa alterar isso, este campo tem funcao de alterar o nome do qr-code.
-
-global.linkgrupss = 'https://chat.whatsapp.com/GcI1l0sflb2BMM199DmxOf' // Preencha com link do seu grupo ou deixe-o vazio.

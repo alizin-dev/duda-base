@@ -26,7 +26,6 @@ const cor3 = corzinhas[Math.floor(Math.random() * (corzinhas.length))];
 const cor4 = corzinhas[Math.floor(Math.random() * (corzinhas.length))];	
 const cor5 = corzinhas[Math.floor(Math.random() * (corzinhas.length))];
 
-const ceemde = JSON.parse(fs.readFileSync('./datab/data/totalcmd.json'));
 
 const getpc = async function(totalchat){
 pc = [];
@@ -189,7 +188,7 @@ const getRandom = (ext) => {
 return `${Math.floor(Math.random() * 10000)}${ext}`;
 };
 
-const banner2 = cfonts.render(('CANAL: HTTPS://YOUTUBE.COM/@ALIZINDEV'), {
+const banner2 = cfonts.render(('CANAL: HTTPS://YOUTUBE.COM/@ALIZINDEV|By:AlizinDev|Numero:|5522997625501'), {
 font: 'console',
 align: 'center',
 gradrient: [`${cor4}`,`${cor2}`], 
@@ -197,7 +196,7 @@ colors: [`${cor3}`,`${cor1}`,`${cor5}`],
 lineHeight: 1
 });
  
-const banner3 = cfonts.render((`DUDA BASE`), {
+const banner3 = cfonts.render((`DUDA BASE|by AlizinDev: Numero:|22997625501`), {
 font: 'slick',             
 align: 'center',           
 colors: [`${cor1}`,`${cor3}`,`${cor4}`,`${cor2}`],
@@ -269,7 +268,7 @@ packname = '-DD-'
 
 const usedCommandRecently = new Set()
 
-chyt = `5521989701174@s.whatsapp.net`
+chyt = `5522997625501@s.whatsapp.net`
 
 const isFiltered = (userId) => !!usedCommandRecently.has(userId)
 
