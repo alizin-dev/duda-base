@@ -10,15 +10,9 @@
 
 <p align="center">
 <img title="Autor" src="https://img.shields.io/badge/Autor-ALIZIN.DEV-orange.svg?style=for-the-badge&logo=github"></a>
-<img title="Versão" src="https://img.shields.io/badge/Versão-3.0.0-orange.svg?style=for-the-badge&logo=github"></a>
+<img title="Versão" src="https://img.shields.io/badge/Versão-2.0.0-orange.svg?style=for-the-badge&logo=github"></a>
 </p>
 
-### <h3>Sem Servidor Para Deixar O Bot Em 24H/48H Online, Clica No Botão Abaixo:
-   <br>
-<a href="https://youtu.be/Mj2zK6IvT8M">0 - Site Da Replit (Video Ensinando)</a>
-  </br>
-</h3>
-</div>
 
 ## INSTALAÇÃO VIA TERMUX  <img src="https://user-images.githubusercontent.com/108157095/182052725-6568419a-6a9f-490a-85ea-90b94af694fe.png" height="25px">
 **1° COMANDO ( PERMISSÃO )**
