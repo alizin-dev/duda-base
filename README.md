@@ -1,4 +1,4 @@
-Oi<img src="https://readme-typing-svg.herokuapp.com/?font=mono&size=30&duration=4000&color=FF00FF&center=falso&vCenter=falso&lines=𝐃𝐔𝐃𝐀-𝐁𝐀𝐒𝐄;𝑨𝖑𝖎𝖟𝖎𝖓-𝕯𝖊𝖛-𝕯𝖔𝖒𝖎𝖓𝖆𝖆✰✰✰✰✰">      
+<img src="https://readme-typing-svg.herokuapp.com/?font=mono&size=30&duration=4000&color=FF00FF&center=falso&vCenter=falso&lines=𝐃𝐔𝐃𝐀-𝐁𝐀𝐒𝐄;𝑨𝖑𝖎𝖟𝖎𝖓-𝕯𝖊𝖛-𝕯𝖔𝖒𝖎𝖓𝖆𝖆✰✰✰✰✰">      
 <h1 align="center">
 <p>
 <img src= "https://telegra.ph/file/b2d75aaaed21ed7b91d49.jpg" alt="DUDA BOT" width="720">
