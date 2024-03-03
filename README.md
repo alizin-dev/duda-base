@@ -1,4 +1,4 @@
-<img src="https://readme-typing-svg.herokuapp.com/?font=mono&size=30&duration=4000&color=FF00FF&center=falso&vCenter=falso&lines=𝐃𝐔𝐃𝐀-𝐁𝐀𝐒𝐄;𝑨𝖑𝖎𝖟𝖎𝖓-𝕯𝖊𝖛-𝕯𝖔𝖒𝖎𝖓𝖆𝖆✰✰✰✰✰">      
+Oi<img src="https://readme-typing-svg.herokuapp.com/?font=mono&size=30&duration=4000&color=FF00FF&center=falso&vCenter=falso&lines=𝐃𝐔𝐃𝐀-𝐁𝐀𝐒𝐄;𝑨𝖑𝖎𝖟𝖎𝖓-𝕯𝖊𝖛-𝕯𝖔𝖒𝖎𝖓𝖆𝖆✰✰✰✰✰">      
 <h1 align="center">
 <p>
 <img src= "https://telegra.ph/file/b2d75aaaed21ed7b91d49.jpg" alt="DUDA BOT" width="720">
@@ -71,25 +71,8 @@ PRONTO. O BOT VAI APAGAR O QRCODE E DPS VAI SE AUTO-ATUALIZAR!
 ```
 sh gerarqr.sh
 ```
-### <h2 align="center">⚙️ INSTRUÇÕES</h2>
-
-   
-### • Escaneie o qr code por outro celular na aba de "APARELHOS CONECTADOS".
-  
-### • Certifique-se que seu Whatsapp esteja atualizado. (recomendo, use o da play store:WHATSAPP BUNNESIS).
-
-### • Quando Desligar o bot e quiser ligar novamente basta digitar : 
-```
-cd /sdcard/duda-base && sh alizin.sh
-```
-### • Vá no arquivo 'CONFIGURACAO.JS' e coloque seu número no lugar do jeito q esta la, no mesmo formato, JAE CHEF ?
- 
-### • mude o prefixo tbm ( SE QUISER ). no arquivo > 'CONFIGURACAO.JS'
- 
-
-
 
  <img src="https://readme-typing-svg.herokuapp.com/?font=mono&size=30&duration=4000&color=00FFFF&center=falso&vCenter=falso&lines=𝑨𝖑𝖎𝖟𝖎𝖓-𝕯𝖊𝖛-𝕯𝖔𝖒𝖎𝖓𝖆𝖆✰✰✰✰✰">      
 
 
-## DEIXEMM OS CRÉDITOS 😈
+## DEIXEMM OS CRÉDITOS, AMEM, JESUS 🙌🏽
