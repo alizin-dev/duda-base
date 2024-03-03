@@ -1,7 +1,7 @@
 <img src="https://readme-typing-svg.herokuapp.com/?font=mono&size=30&duration=4000&color=FF00FF&center=falso&vCenter=falso&lines=𝐃𝐔𝐃𝐀-𝐁𝐀𝐒𝐄;𝑨𝖑𝖎𝖟𝖎𝖓-𝕯𝖊𝖛-𝕯𝖔𝖒𝖎𝖓𝖆𝖆✰✰✰✰✰">      
 <h1 align="center">
 <p>
-<img src= "https://telegra.ph/file/b2d75aaaed21ed7b91d49.jpg" alt="DUDA BOT" width="720">
+<img src= "https://telegra.ph/file/25b9f3a527f50db6fe2c4.jpg" alt="DUDA BOT" width="720">
 </p>
 
 <p align="center">
@@ -36,7 +36,7 @@ git clone https://github.com/alizin-dev/duda-base.git
 ```
 cd duda-base
 ```
-**6° COMANDO ( INSTALAÇÃO,dependências para o bot funfar )**
+**6° COMANDO ( INSTALAÇÃO,DEPENDÊNCIAS PARA O BOT FUNFAR )**
 ```
 sh instalacao.sh
 ```
