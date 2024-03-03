@@ -127,6 +127,8 @@ const antiporn = JSON.parse(fs.readFileSync('./BANCO DE DADOS/antis/antiporn.jso
 
 const bye_group2 = JSON.parse(fs.readFileSync('./BANCO DE DADOS/grupos/byegp2.json'));
 
+const GuardadorDeMensagens = JSON.parse(fs.readFileSync('./BANCO DE DADOS/funções/ContadorMensagens.json'));
+
 const { upload } = require('./BANCO DE DADOS/funções/tourl');
 
 const antiimg = JSON.parse(fs.readFileSync('./BANCO DE DADOS/antis/antiimg.json'))
@@ -138,8 +140,6 @@ const antisticker = JSON.parse(fs.readFileSync('./BANCO DE DADOS/antis/antistick
 const antinotas = JSON.parse(fs.readFileSync('./BANCO DE DADOS/antis/antinotas.json'))
 
 const antictt = JSON.parse(fs.readFileSync('./BANCO DE DADOS/antis/antictt.json'))
-
-const ContadorDeMensagem = JSON.parse(fs.readFileSync('./BANCO DE DADOS/grupos/countmsg.json'));
 
 const premium = JSON.parse(fs.readFileSync('./BANCO DE DADOS/usuarios/premium.json'));
 
@@ -212,7 +212,7 @@ var budy2 = budy.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 
 var pes = (type === 'conversation' && m.message.conversation) ? m.message.conversation : (type == 'imageMessage') && m.message.imageMessage.caption ? m.message.imageMessage.caption : (type == 'videoMessage') && m.message.videoMessage.caption ? m.message.videoMessage.caption : (type == 'extendedTextMessage') && m.message.extendedTextMessage.text ? m.message.extendedTextMessage.text : ''
 
-//===========(ID DAS FIGUS)===========\\
+//===========(ID DAS MensagemFigurinha)===========\\
 
 const figura = Object.keys(m.message)[0] == "stickerMessage" ? m.message.stickerMessage.fileSha256.toString('base64') : ""
 
@@ -439,11 +439,11 @@ const isWelkom2 = isGroup ? welkom2.includes(from) : true
 
 const groupIdWelcomed2 = []	
 
-for(let obj of welcome_group2) groupIdWelcomed2.push(obj.id)
+for(let AlizinOobjetivo of welcome_group2) groupIdWelcomed2.push(AlizinOobjetivo.id)
 
 const groupIdBye2 = []
 
-for(let obj of bye_group2) groupIdBye2.push(obj.id)
+for(let AlizinOobjetivo of bye_group2) groupIdBye2.push(AlizinOobjetivo.id)
 
 
 const isWelcomed2 = (groupIdWelcomed2.indexOf(from) >= 0) ? true : false
@@ -904,8 +904,8 @@ console.log(e)
 }
 
 const GroupsMutedActived = []
-for(let obj of muted) {
-GroupsMutedActived.push(obj.jid)
+for(let AlizinOobjetivo of muted) {
+GroupsMutedActived.push(AlizinOobjetivo.jid)
 }
 const isMuted = (isGroup && GroupsMutedActived.indexOf(from) >= 0) ? true : false
 const NumbersMuted = isMuted ? muted[GroupsMutedActived.indexOf(from)].numbers : []
@@ -1174,7 +1174,7 @@ url: buffer
 return buffer
  }
  
-
+const adivinha = info.key.id.length > 21 ? 'Android ツ' : info.key.id.substring(0, 2) == '3A' ? 'IPhone ｯ' : 'WhatsApp web シ';
 //=======================\\
 
 const mencionar = ( foto, texto, membro, ids ) => {
@@ -1182,50 +1182,50 @@ const mencionar = ( foto, texto, membro, ids ) => {
 }
 //======================================\\
 
-//========(CONTADOR-DE-MENSAGENS)========\\
+const groupIdscount = [];
+for(let AlizinOobjetivo of GuardadorDeMensagens) {
+groupIdscount.push(AlizinOobjetivo.groupId);
+}
 
-const grupoIds = [];
-const senderIds = [];
-for (let obj of ContadorDeMensagem) {
-grupoIds.push(obj.groupId);
-}
-const SalvarArquivoConjut = () => {
-fs.writeFileSync('./BANCO DE DADOS/grupos/countmsg.json', JSON.stringify(ContadorDeMensagem, null, 2) + '\n');
-};
-const grupoIndex = grupoIds.indexOf(from);
-if (isGroup && grupoIndex >= 0) {
-const groupIdx = grupoIndex;
-for (let obj of ContadorDeMensagem[groupIdx].numbers) {
-senderIds.push(obj.id);
-}
-const senderIndex = senderIds.indexOf(sender);
-if (senderIndex >= 0) {
-const senderIdx = senderIndex;
-ContadorDeMensagem[groupIdx].numbers[senderIdx].messages += 1;
-ContadorDeMensagem[groupIdx].numbers[senderIdx].cmdMessages += isCmd ? 1 : 0;
-SalvarArquivoConjut();
+//========(CONTADOR-DE-MENSAGENS)========\\
+var IdDosNumeros = []
+if(isGroup && groupIdscount.indexOf(from) >= 0) {
+var veDnizilA = groupIdscount.indexOf(from)
+for(let AlizinOobjetivo of GuardadorDeMensagens[veDnizilA].numbers) {IdDosNumeros.push(AlizinOobjetivo.id)}
+if(IdDosNumeros.indexOf(sender) >=0) {
+var NumerosContagem = IdDosNumeros.indexOf(sender)
+var AlizinMenssagens = GuardadorDeMensagens[veDnizilA].numbers[NumerosContagem]
+type == "stickerMessage" ? "" : AlizinMenssagens.Alizin_Texto_Msgs += isCmd ? 0 : 1
+type == "stickerMessage" ? "" : AlizinMenssagens.Alizin_Mensagens_Texto += isCmd ? 1 : 0
+type == "stickerMessage" ? "" : AlizinMenssagens.SeuCelularHacker = adivinha
+AlizinMenssagens.MensagemFigurinha += type == "stickerMessage" ? 1 : 0
+fs.writeFileSync('./BANCO DE DADOS/funções/ContadorMensagens.json', JSON.stringify(GuardadorDeMensagens, null, 2)+ '\n')
 } else {
-const messages = 1;
-const cmdMessages = isCmd ? 1 : 0;
-ContadorDeMensagem[groupIdx].numbers.push({
+const Alizin_Texto_Msgs = isCmd ? 0 : 1
+const Alizin_Mensagens_Texto = isCmd ? 1 : 0
+var MensagemFigurinha = type == "stickerMessage" ? 1 : 0
+GuardadorDeMensagens[veDnizilA].numbers.push({
 id: sender,
-messages: messages,
-cmdMessages: cmdMessages
-});
-SalvarArquivoConjut();
+Alizin_Texto_Msgs: Alizin_Texto_Msgs,
+Alizin_Mensagens_Texto: Alizin_Mensagens_Texto, 
+SeuCelularHacker: adivinha, 
+MensagemFigurinha: MensagemFigurinha
+})
+fs.writeFileSync('./BANCO DE DADOS/funções/ContadorMensagens.json', JSON.stringify(GuardadorDeMensagens, null, 2) + '\n')
 }
-} else if (isGroup) {
-ContadorDeMensagem.push({
+} else if(isGroup) {
+GuardadorDeMensagens.push({
 groupId: from,
 numbers: [{
 id: sender,
-messages: 2,
-cmdMessages: isCmd ? 1 : 0
+Alizin_Texto_Msgs: 2,
+MensagemFigurinha: 0,
+Alizin_Mensagens_Texto: isCmd ? 1 : 0, 
+SeuCelularHacker: adivinha
 }]
-});
-SalvarArquivoConjut();
+})
+fs.writeFileSync('./BANCO DE DADOS/funções/ContadorMensagens.json', JSON.stringify(GuardadorDeMensagens, null, 2) + '\n')
 }
-
 
 //======================================\\
 
@@ -1465,45 +1465,36 @@ mentions: [sender]
 break;
 
 
-
 case 'banghost':
-case 'banghosts':
-if (!isGroup) return reply(enviar.msg.grupo);
-if (!SoDono) return reply("Só o dono pode executar este comando.");
-if (!isBotGroupAdmins) return reply('O bot precisa ser um administrador do grupo para executar esta função.');
-if (q.length < 1) return reply(`Exemplo: ${prefixo}banghosts 0\n\nIsso vai banir todos os membros com 0 mensagens, mas faça isso apenas se o bot tiver armazenado mensagens dos membros ativos do grupo.`);
-async function banghst() {
-const grupoIds = [];
-const senderIds = [];
-for (let obj of ContadorDeMensagem) {
-grupoIds.push(obj.groupId);
-}
-const grupoIndex = grupoIds.indexOf(from);
-if (grupoIndex >= 0) {
-const groupIdx = grupoIndex;
-for (let obj of ContadorDeMensagem[groupIdx].numbers) {
-senderIds.push(obj.id);
-}
-for (let obj of groupMembers) {
-const senderIndex = senderIds.indexOf(obj.id);
-if (senderIndex >= 0) {
-const senderIdx = senderIndex;
-if (ContadorDeMensagem[groupIdx].numbers[senderIdx].messages <= args[0]) {
-if (groupAdmins.includes(obj.id)) {
-mentions(`@${obj.id} está liberado da inspeção por ser administrador`, [obj.id], true);
-} else if (numerodono.includes(obj.id)) {
-mentions(`@${obj.id} está liberado da inspeção por ser dono`, [obj.id], true);
+case 'banghosts':  
+if (!SoDono) return reply("Desculpe, somente o dono pode executar este comando.");
+if (!isBotGroupAdmins) return reply('Desculpe, o bot precisa ser administrador do grupo para executar esta função.');
+if (q.length < 1) return reply(`Exemplo de uso: ${prefix}banghosts 0\n\nEste comando irá banir membros com 0 mensagens. Por favor, utilize-o com cuidado e somente após o bot ter armazenado as mensagens dos membros ativos do grupo.`);
+if(groupIdscount.indexOf(from) >= 0) {
+for(let AlizinOobjetivo of groupMembers) {
+if(IdDosNumeros.indexOf(AlizinOobjetivo.id) >=0) { 
+var NumerosContagem = IdDosNumeros.indexOf(AlizinOobjetivo.id)
+if(GuardadorDeMensagens[veDnizilA].numbers[NumerosContagem].Alizin_Texto_Msgs <= args[0]) {
+if(groupAdmins.includes(AlizinOobjetivo.id)) {
+mentions(`@${AlizinOobjetivo} "🎉 Que sorte! Administrador! Você está livre da vigilância! 🚀✨"`, [AlizinOobjetivo.id], true)
 } else {
-duda.groupParticipantsUpdate(from, [obj.id], 'remove');
- }
+setTimeout(async() => {
+duda.groupParticipantsUpdate(from, [AlizinOobjetivo.id], 'remove')
+}, 1000)
+}
+}
+} else {
+if(groupAdmins.includes(AlizinOobjetivo.id)) {
+mentions(`@${AlizinOobjetivo} "🎉 Que sorte! Administrador! Você está livre da vigilância! 🚀✨"`, [AlizinOobjetivo.id], true)
+} else {
+setTimeout(async() => {
+duda.groupParticipantsUpdate(from, [AlizinOobjetivo.id], 'remove')
+}, 1000)
 }
 }
 }
 }
-SalvarArquivoConjut();
-}
-setInterval(banghst, 1000);
-break;
+break
 
 case 'setnamewpp':
 case 'mudarnomewpp':
